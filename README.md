@@ -115,7 +115,8 @@ Full notebook: [`notebooks/01_eda.ipynb`](notebooks/01_eda.ipynb)
 
 **Each job changes the shape of the day differently.** The market job keeps me moving all day;
 the restaurant job has two peaks (morning and late-evening shifts); mentoring pushes activity
-past midnight.
+past midnight. The restaurant dip around 18:00 is the dinner rush (17:30–19:30): I was cooking at my station
+in the kitchen, so I was very busy but barely walking.
 
 ![Hourly profiles](figures/04_hourly_profiles.png)
 
