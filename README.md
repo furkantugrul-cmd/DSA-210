@@ -107,9 +107,32 @@ Daily averages per period:
 These are descriptive numbers only; whether the differences are statistically meaningful is
 tested in the hypothesis-testing stage.
 
+## Stage 2: Exploratory data analysis
+
+Full notebook: [`notebooks/01_eda.ipynb`](notebooks/01_eda.ipynb)
+
+![Daily steps by period](figures/02_steps_by_period.png)
+
+**Each job changes the shape of the day differently.** The market job keeps me moving all day;
+the restaurant job has two peaks (morning and late-evening shifts); mentoring pushes activity
+past midnight.
+
+![Hourly profiles](figures/04_hourly_profiles.png)
+
+![Timeline](figures/03_timeline.png)
+
+Main findings:
+
+- All three jobs are above every student period, but the market job (≈21.8k steps/day) is far
+  above the restaurant job (≈12.5k) and mentoring (≈11.4k); semester days average ≈9.4k.
+- Weekends reduce activity only during school (≈900 fewer steps); at work they look the same.
+- Daily steps are right-skewed, so non-parametric tests are reported next to t-tests.
+- **The phone change matters:** semester days after May 2025 average ≈2,000 fewer steps than
+  before. Each job will therefore also be compared with semester days recorded by the same phone.
+
 ## Planned analysis
 
-1. **Exploratory data analysis:** distributions, time series, hourly activity profiles per period,
+1. ✅ **Exploratory data analysis** (done, see above): distributions, time series, hourly activity profiles per period,
    weekday vs weekend patterns.
 2. **Hypothesis testing**, for example:
    - Do I take more steps on work days than on semester days? (Welch t-test / Mann–Whitney U)
@@ -128,6 +151,9 @@ tested in the hypothesis-testing stage.
 ├── data/
 │   ├── daily_activity.csv   # one row per day, with period labels
 │   └── hourly_steps.csv     # steps per hour (local time)
+├── notebooks/
+│   └── 01_eda.ipynb         # stage 2: exploratory data analysis
+├── figures/                 # plots used in this README
 └── src/
     ├── build_daily.py       # Apple Health export.xml -> daily table (time-zone corrected)
     └── label_periods.py     # adds period labels (academic calendar, jobs, travel) and calendar features

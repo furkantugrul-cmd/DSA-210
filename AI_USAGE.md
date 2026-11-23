@@ -1,36 +1,26 @@
 # Use of Generative AI
 
-I used Claude (Anthropic) as an assistant throughout this project. This file lists what it did
-and what I did, and it will be updated at every stage.
+I used Claude (Anthropic) as a coding and writing assistant in this project.
 
-## What the AI did (stage 1)
+**AI contributions**
+- Suggested Apple Health data as one of several possible topics.
+- Wrote the data-processing scripts in `src/` and the EDA notebook (`notebooks/01_eda.ipynb`).
+- Looked up the official academic and exam calendars used for the period labels.
+- Drafted the README text and figures.
 
-- Suggested using my Apple Health data as the project topic, among a few options it proposed.
-- Wrote the Python scripts in `src/` that turn the Apple Health `export.xml` file into daily and
-  hourly tables, including the time-zone conversion and the period labels.
-- Proposed counting only iPhone steps to avoid double counting with the Apple Watch.
-- Wrote the first version of this README and the "first look" summary table.
+**My contributions**
+- **Data and research question:** Provided four and a half years of my own Apple Health records
+  and chose to frame the project around how three very different jobs reshape my daily routine.
+- **Domain knowledge:** Defined every life period from my own history (supermarket job, exam
+  preparation year, summer school mentoring, line cook job in the USA, post-job travel), which
+  is the backbone of the whole analysis.
+- **Catching a critical data error:** Questioned the surprising result that I walked far more
+  at night in the USA, and traced it to Apple Health exporting all timestamps in Istanbul time.
+  Without this, the main conclusion about my US work schedule would have been reversed.
+- **Improving the study design:** Recognised that treating every non-work day as "school" mixed
+  very different situations (classes, exams, holidays), which led to splitting them using the
+  official academic calendars.
+- **Critical review:** Checked the results and interpretations against what I actually
+  experienced in each period.
 
-## What the AI did (stage 1b: better period labels)
-
-- Looked up Sabancı University's official academic calendars (2023-24 to 2026-27), the MEB
-  school calendar, the ÖSYM exam dates and the SU High School Summer School dates.
-- Rewrote `src/label_periods.py` so that non-work days are split into high school, exam
-  preparation, pre-semester, semester, finals and holiday, and updated the README tables.
-
-## What I did
-
-- Provided the data: my personal Apple Health records since March 2022.
-- Chose the topic among the suggested options.
-- Provided the dates and context of each life period (market job, restaurant job, travel).
-- Questioned the first results: the analysis showed far more night-time steps during the US job,
-  and I asked whether this was caused by the time difference. Checking it showed that all
-  timestamps had been exported in Istanbul time, which led to the correction described in the
-  README.
-- Noticed that labelling every non-work day as "school" was wrong (the university is not open
-  every day) and asked for the days to be split using the real academic calendar.
-- Provided my personal timeline: graduating high school in 2022, a year of studying for the
-  university exam at a library, starting Sabancı in September 2023 with the English
-  preparatory year, working as a summer-school mentor in 2025, and missing the first week of
-  fall 2026 while travelling.
-- Reviewed the outputs and uploaded each stage to this repository.
+This file is updated at each stage.
